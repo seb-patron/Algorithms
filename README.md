@@ -72,6 +72,70 @@ This repository contains Python implementations of fundamental algorithms. Each 
      - Space: \( O(V) \)
    - **File**: [dijkstras_algorithm.py](dijkstras_algorithm/dijkstras_algorithm.py)
 
+## Sorting Algorithm Performance Testing
+
+This repository includes a performance testing framework for comparing the efficiency of different sorting algorithms. The framework allows you to:
+
+1. Test the performance of each sorting algorithm on the same random array
+2. Run multiple tests with different arrays and calculate average performance
+3. Compare performance across different array sizes
+4. Test how algorithms perform with different data distributions (random, nearly sorted, reverse sorted, etc.)
+5. Visualize results with charts and graphs
+
+### Running Performance Tests
+
+The performance testing framework provides several scripts for different types of tests:
+
+#### Run a Single Test
+
+Test all sorting algorithms on a single random array:
+
+```bash
+python sorting_performance/run_single_test.py --size 10000
+```
+
+#### Run Multiple Tests
+
+Run multiple tests and calculate statistics:
+
+```bash
+python sorting_performance/run_multiple_tests.py --size 10000 --tests 10
+```
+
+#### Compare Different Array Sizes
+
+Compare performance across different array sizes:
+
+```bash
+python sorting_performance/compare_sizes.py --sizes 1000 5000 10000 20000 --tests 5
+```
+
+#### Compare Different Data Distributions
+
+Test how algorithms perform with different data distributions:
+
+```bash
+python sorting_performance/compare_distributions.py --size 10000 --tests 5
+```
+
+#### Run All Tests
+
+Run all performance tests with a single command:
+
+```bash
+python sorting_performance/run_all_tests.py --size 10000 --tests 5
+```
+
+### Adding New Sorting Algorithms
+
+To add a new sorting algorithm to the performance tests:
+
+1. Implement your sorting algorithm in a separate module
+2. Import your sorting function in `sorting_performance/performance_test.py`
+3. Add your sorting function to the `SORTING_ALGORITHMS` dictionary
+
+For more details, see the [Sorting Performance README](sorting_performance/README.md).
+
 ## Testing with Pytest
 
 This project uses `pytest` to automate testing. Each algorithm has corresponding test cases to ensure correctness. To run the tests:
@@ -126,4 +190,3 @@ Poetry is used to manage project dependencies and virtual environments.
 ---
 
 Happy coding and learning!
-

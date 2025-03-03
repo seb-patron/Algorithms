@@ -14,6 +14,7 @@ from insertion_sort.insertion_sort import insertion_sort
 from quick_sort.quick_sort import quick_sort
 from merge_sort.merge_sort import merge_sort
 from selection_sort.selection_sort import selection_sort
+from timsort.simplified_timsort import simplified_timsort
 
 # Dictionary of sorting algorithms
 SORTING_ALGORITHMS: Dict[str, Callable] = {
@@ -21,9 +22,9 @@ SORTING_ALGORITHMS: Dict[str, Callable] = {
     "Quick Sort": quick_sort,
     "Merge Sort": merge_sort,
     "Selection Sort": selection_sort,
+    "Tim Sort": simplified_timsort,
     # Add new sorting algorithms here as you implement them
     # "Heap Sort": heap_sort,
-    # "Tim Sort": tim_sort,
     # "Intro Sort": intro_sort,
 }
 
