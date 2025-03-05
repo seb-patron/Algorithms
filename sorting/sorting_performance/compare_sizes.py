@@ -47,7 +47,7 @@ def plot_comparison(results: Dict[str, Dict[str, List[float]]], metric: str = "m
         metric: The metric to plot (mean, median, min, max, stdev)
     """
     # Create output directory if it doesn't exist
-    os.makedirs("sorting_performance/output", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
     
     plt.figure(figsize=(12, 8))
     
@@ -62,7 +62,7 @@ def plot_comparison(results: Dict[str, Dict[str, List[float]]], metric: str = "m
     plt.tight_layout()
     
     # Save the plot to the output directory
-    plt.savefig(f"sorting_performance/output/comparison_{metric}.png")
+    plt.savefig(f"output/comparison_{metric}.png")
     plt.close()
 
 def main():
@@ -83,7 +83,7 @@ def main():
     for metric in ["mean", "median", "min", "max"]:
         plot_comparison(results, metric)
     
-    print("\nDone! Comparison results have been saved to the sorting_performance/output directory.")
+    print("\nDone! Comparison results have been saved to the output directory.")
 
 if __name__ == "__main__":
     main() 

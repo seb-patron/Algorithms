@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 from typing import Callable, Dict, List, Tuple
 
 # Add parent directory to path to import sorting modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 # Import sorting algorithms
-from insertion_sort.insertion_sort import insertion_sort
-from quick_sort.quick_sort import quick_sort
-from merge_sort.merge_sort import merge_sort
-from selection_sort.selection_sort import selection_sort
-from timsort.simplified_timsort import simplified_timsort
+from sorting.insertion_sort.insertion_sort import insertion_sort
+from sorting.quick_sort.quick_sort import quick_sort
+from sorting.merge_sort.merge_sort import merge_sort
+from sorting.selection_sort.selection_sort import selection_sort
+from sorting.timsort.simplified_timsort import simplified_timsort
 
 # Dictionary of sorting algorithms
 SORTING_ALGORITHMS: Dict[str, Callable] = {
@@ -139,7 +139,7 @@ def plot_results(stats: Dict[str, Dict[str, float]], metric: str = "mean") -> No
         metric: The metric to plot (min, max, mean, median, stdev)
     """
     # Create output directory if it doesn't exist
-    os.makedirs("sorting_performance/output", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
     
     algorithms = list(stats.keys())
     values = [stats[algo][metric] for algo in algorithms]
@@ -153,7 +153,7 @@ def plot_results(stats: Dict[str, Dict[str, float]], metric: str = "mean") -> No
     plt.tight_layout()
     
     # Save the plot to the output directory
-    plt.savefig(f"sorting_performance/output/performance_{metric}.png")
+    plt.savefig(f"output/performance_{metric}.png")
     plt.close()
 
 def main() -> None:
@@ -178,7 +178,7 @@ def main() -> None:
     for metric in ["mean", "median", "min", "max", "stdev"]:
         plot_results(stats, metric)
     
-    print("\nDone! Results have been saved to the sorting_performance/output directory.")
+    print("\nDone! Results have been saved to the output directory.")
 
 if __name__ == "__main__":
     main() 
