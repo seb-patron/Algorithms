@@ -30,6 +30,10 @@ This repository contains Python implementations of fundamental algorithms. Each 
 
    **Note**: Although Tim Sort shares the same worst-case time complexity as Merge Sort (O(n log n)), its constants are lower due to optimizations like using insertion sort for small runs and taking advantage of pre-existing order in the data. This makes Tim Sort significantly faster in practice, especially for real-world data that often has some inherent order.
 
+   **Performance Comparison by Array Size**:
+   
+   ![Sorting Algorithm Performance Comparison (Mean)](sorting/sorting_performance/output/comparison_mean.png)
+
    - **More Details**: [Sorting Algorithms README](sorting/README.md)
 
 ### 3. **Breadth-First Search (BFS)**

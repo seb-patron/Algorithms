@@ -72,6 +72,26 @@ This directory contains implementations of various sorting algorithms in Python.
 
 **Note**: Although Tim Sort shares the same worst-case time complexity as Merge Sort (O(n log n)), its constants are lower due to optimizations like using insertion sort for small runs and taking advantage of pre-existing order in the data. This makes Tim Sort significantly faster in practice, especially for real-world data that often has some inherent order.
 
+## Performance Analysis
+
+### Performance Comparison by Array Size
+
+The following chart shows how different sorting algorithms perform as the array size increases:
+
+![Sorting Algorithm Performance Comparison (Mean)](sorting_performance/output/comparison_mean.png)
+
+### Performance on a Single Random Array
+
+The following chart shows the performance of different sorting algorithms on a single random array:
+
+![Sorting Algorithm Performance (Mean)](sorting_performance/output/performance_mean.png)
+
+### Performance Across Different Data Distributions
+
+The following chart shows how different sorting algorithms perform across various data distributions:
+
+![Sorting Algorithm Performance by Data Distribution (Mean)](sorting_performance/output/distribution_comparison_mean.png)
+
 ## Sorting Algorithm Performance Testing
 
 This directory includes a performance testing framework for comparing the efficiency of different sorting algorithms. The framework allows you to:
